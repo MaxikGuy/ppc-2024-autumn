@@ -32,7 +32,7 @@ int getRandomInt(int min, int max) {
 }
 }  // namespace savchenko_m_ribbon_mult_split_a_mpi
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_zero_inputs_count) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, validation_zero_inputs_count) {
   // Create data
   boost::mpi::communicator world;
 
@@ -64,7 +64,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_zero_inputs_count) {
   ASSERT_FALSE(testMpiTaskParallel.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_more_than_one_inputs_count) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, validation_more_than_one_inputs_count) {
   // Create data
   boost::mpi::communicator world;
 
@@ -98,7 +98,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_more_than_one_inputs_count) {
   ASSERT_FALSE(testMpiTaskParallel.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_zero_outputs_count) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, validation_zero_outputs_count) {
   // Create data
   boost::mpi::communicator world;
 
@@ -130,7 +130,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_zero_outputs_count) {
   ASSERT_FALSE(testMpiTaskParallel.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_more_than_one_outputs_count) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, validation_more_than_one_outputs_count) {
   // Create data
   boost::mpi::communicator world;
 
@@ -164,7 +164,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_more_than_one_outputs_count) {
   ASSERT_FALSE(testMpiTaskParallel.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_zero_matrix_size) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, validation_zero_matrix_size) {
   // Create data
   boost::mpi::communicator world;
 
@@ -197,7 +197,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_zero_matrix_size) {
   ASSERT_FALSE(testMpiTaskParallel.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_5x5) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_5x5) {
   // Create data
   boost::mpi::communicator world;
 
@@ -261,7 +261,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrixes_5x5) {
   }
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_10x10) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_10x10) {
   // Create data
   boost::mpi::communicator world;
 
@@ -325,7 +325,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrixes_10x10) {
   }
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_15x15) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_15x15) {
   // Create data
   boost::mpi::communicator world;
 
@@ -389,7 +389,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrixes_15x15) {
   }
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_50x50) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_50x50) {
   // Create data
   boost::mpi::communicator world;
 
@@ -453,7 +453,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrixes_50x50) {
   }
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_100x100) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_100x100) {
   // Create data
   boost::mpi::communicator world;
 
@@ -517,7 +517,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrixes_100x100) {
   }
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_128x128) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_128x128) {
   // Create data
   boost::mpi::communicator world;
 
@@ -581,7 +581,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrixes_128x128) {
   }
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrixes_150x150) {
+TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_150x150) {
   // Create data
   boost::mpi::communicator world;
 

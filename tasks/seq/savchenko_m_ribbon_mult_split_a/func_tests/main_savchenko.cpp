@@ -30,7 +30,7 @@ int getRandomInt(int min, int max) {
 }
 }  // namespace savchenko_m_ribbon_mult_split_a_seq
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_zero_inputs_count) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_zero_inputs_count) {
   // Create data
 
   const int size = 5;
@@ -60,7 +60,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_zero_inputs_count) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_inputs_count_less_than_4) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_inputs_count_less_than_4) {
   // Create data
 
   const int size = 5;
@@ -92,7 +92,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_inputs_count_less_than_4) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_inputs_count_more_than_4) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_inputs_count_more_than_4) {
   // Create data
 
   const int size = 5;
@@ -130,40 +130,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_inputs_count_more_than_4) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_zero_outputs_count) {
-  // Create data
-
-  const int size = 5;
-  const int columns_A = size;
-  const int rows_A = size;
-  const int columns_B = size;
-  const int rows_B = size;
-  const int res_size = rows_A * columns_B;
-
-  std::vector<int> matrix_A(rows_A * columns_A, 0);
-  std::vector<int> matrix_B(rows_B * columns_B, 0);
-
-  std::vector<int> matrix_res(res_size, 0);
-
-  // Create TaskData
-  std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-  //// matrix_A
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_A.data()));
-  taskDataSeq->inputs_count.emplace_back(columns_A);
-  taskDataSeq->inputs_count.emplace_back(rows_A);
-  //// matrix_B
-  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_B.data()));
-  taskDataSeq->inputs_count.emplace_back(columns_B);
-  taskDataSeq->inputs_count.emplace_back(rows_B);
-  //// matrix_res
-  taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_res.data()));
-
-  // Create Task
-  savchenko_m_ribbon_mult_split_a_seq::TestTaskSequential testTaskSequential(taskDataSeq);
-  ASSERT_FALSE(testTaskSequential.validation());
-}
-
-TEST(savchenko_m_ribbon_mult_split_a, validation_outputs_count_more_than_1) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_zero_outputs_count) {
   // Create data
 
   const int size = 5;
@@ -190,6 +157,39 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_outputs_count_more_than_1) {
   taskDataSeq->inputs_count.emplace_back(rows_B);
   //// matrix_res
   taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_res.data()));
+
+  // Create Task
+  savchenko_m_ribbon_mult_split_a_seq::TestTaskSequential testTaskSequential(taskDataSeq);
+  ASSERT_FALSE(testTaskSequential.validation());
+}
+
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_outputs_count_more_than_1) {
+  // Create data
+
+  const int size = 5;
+  const int columns_A = size;
+  const int rows_A = size;
+  const int columns_B = size;
+  const int rows_B = size;
+  const int res_size = rows_A * columns_B;
+
+  std::vector<int> matrix_A(rows_A * columns_A, 0);
+  std::vector<int> matrix_B(rows_B * columns_B, 0);
+
+  std::vector<int> matrix_res(res_size, 0);
+
+  // Create TaskData
+  std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
+  //// matrix_A
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_A.data()));
+  taskDataSeq->inputs_count.emplace_back(columns_A);
+  taskDataSeq->inputs_count.emplace_back(rows_A);
+  //// matrix_B
+  taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_B.data()));
+  taskDataSeq->inputs_count.emplace_back(columns_B);
+  taskDataSeq->inputs_count.emplace_back(rows_B);
+  //// matrix_res
+  taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_res.data()));
   taskDataSeq->outputs_count.emplace_back(matrix_res.size());
   taskDataSeq->outputs_count.emplace_back(matrix_res.size());
 
@@ -198,7 +198,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_outputs_count_more_than_1) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_matrix_A_zero_size) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_matrix_A_zero_size) {
   // Create data
 
   const int size = 5;
@@ -232,7 +232,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_matrix_A_zero_size) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_matrix_B_zero_size) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_matrix_B_zero_size) {
   // Create data
 
   const int size = 5;
@@ -266,7 +266,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_matrix_B_zero_size) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, validation_not_equal_columnsA_rowsB) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, validation_not_equal_columnsA_rowsB) {
   // Create data
 
   const int size = 5;
@@ -300,7 +300,7 @@ TEST(savchenko_m_ribbon_mult_split_a, validation_not_equal_columnsA_rowsB) {
   ASSERT_FALSE(testTaskSequential.validation());
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, simple_matrixA_3x3_matrixB_3x3) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, simple_matrixA_3x3_matrixB_3x3) {
   // Create data
   // const int gen_min = -1000;
   // const int gen_max = 1000;
@@ -344,7 +344,7 @@ TEST(savchenko_m_ribbon_mult_split_a, simple_matrixA_3x3_matrixB_3x3) {
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, simple_matrixA_3x3_matrixB_3x2) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, simple_matrixA_3x3_matrixB_3x2) {
   // Create data
   // const int gen_min = -1000;
   // const int gen_max = 1000;
@@ -388,7 +388,7 @@ TEST(savchenko_m_ribbon_mult_split_a, simple_matrixA_3x3_matrixB_3x2) {
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrix_10x10_and_10x10_with_rand_num) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, matrix_10x10_and_10x10_with_rand_num) {
   // Create data
   const int columns_A = 10;
   const int rows_A = 10;
@@ -432,7 +432,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrix_10x10_and_10x10_with_rand_num) {
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrix_5x10_and_10x5_with_rand_num) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, matrix_5x10_and_10x5_with_rand_num) {
   // Create data
   const int columns_A = 10;
   const int rows_A = 5;
@@ -476,7 +476,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrix_5x10_and_10x5_with_rand_num) {
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrix_5x10_and_10x1_with_rand_num) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, matrix_5x10_and_10x1_with_rand_num) {
   // Create data
   const int columns_A = 10;
   const int rows_A = 5;
@@ -520,7 +520,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrix_5x10_and_10x1_with_rand_num) {
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrix_100x100_and_100x100_with_rand_num) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, matrix_100x100_and_100x100_with_rand_num) {
   // Create data
   const int columns_A = 100;
   const int rows_A = 100;
@@ -564,7 +564,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrix_100x100_and_100x100_with_rand_num) 
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrix_50x100_and_100x50_with_rand_num) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, matrix_50x100_and_100x50_with_rand_num) {
   // Create data
   const int columns_A = 100;
   const int rows_A = 50;
@@ -608,7 +608,7 @@ TEST(savchenko_m_ribbon_mult_split_a, matrix_50x100_and_100x50_with_rand_num) {
   ASSERT_EQ(refference, matrix_res);
 }
 
-TEST(savchenko_m_ribbon_mult_split_a, matrix_50x100_and_100x1_with_rand_num) {
+TEST(savchenko_m_ribbon_mult_split_a_seq, matrix_50x100_and_100x1_with_rand_num) {
   // Create data
   const int columns_A = 100;
   const int rows_A = 50;
