@@ -214,7 +214,7 @@ TEST(savchenko_m_ribbon_mult_split_a_mpi, matrixes_5x5) {
 
     gen_min = -1000;
     gen_max = 1000;
-      
+
     matrix_A = savchenko_m_ribbon_mult_split_a_mpi::getRandomMatrix(size, size, gen_min, gen_max);
     matrix_B = savchenko_m_ribbon_mult_split_a_mpi::getRandomMatrix(size, size, gen_min, gen_max);
     matrix_res = std::vector<int>(res_size, 0);
