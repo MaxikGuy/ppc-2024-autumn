@@ -43,8 +43,6 @@ double getRandomDouble(double min, double max) {
   return dist(gen);
 }
 
-const double GEN_MIN = -10.0;
-const double GEN_MAX = 10.0;
 }  // namespace savchenko_m_matrix_mult_strassen_mpi
 
 TEST(savchenko_m_matrix_mult_strassen_mpi, test_pipeline_run) {
@@ -53,8 +51,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, test_pipeline_run) {
 
   size_t size = 256;
 
-  double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-  double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
+  double gen_min = -10.0;
+  double gen_max = 10.0;
 
   std::vector<double> matrix_A(size * size, 0.0);
   std::vector<double> matrix_B(size * size, 0.0);
@@ -96,8 +94,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, test_task_run) {
 
   size_t size = 256;
 
-  double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-  double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
+  double gen_min = -10.0;
+  double gen_max = 10.0;
 
   std::vector<double> matrix_A(size * size, 0.0);
   std::vector<double> matrix_B(size * size, 0.0);

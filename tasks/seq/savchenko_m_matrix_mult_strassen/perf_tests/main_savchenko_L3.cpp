@@ -43,16 +43,14 @@ double getRandomDouble(double min, double max) {
   return dist(gen);
 }
 
-const double GEN_MIN = -10.0;
-const double GEN_MAX = 10.0;
 }  // namespace savchenko_m_matrix_mult_strassen_seq
 
 TEST(savchenko_m_matrix_mult_strassen_seq, test_pipeline_run) {
   // Create data
   const size_t size = 256;
 
-  const double gen_min = savchenko_m_matrix_mult_strassen_seq::GEN_MIN;
-  const double gen_max = savchenko_m_matrix_mult_strassen_seq::GEN_MAX;
+  const double gen_min = -10.0;
+  const double gen_max = 10.0;
 
   std::vector<double> matrix_A = savchenko_m_matrix_mult_strassen_seq::getRandomMatrix(size, gen_min, gen_max);
   std::vector<double> matrix_B = savchenko_m_matrix_mult_strassen_seq::getRandomMatrix(size, gen_min, gen_max);
@@ -93,8 +91,8 @@ TEST(savchenko_m_matrix_mult_strassen_seq, test_task_run) {
   // Create data
   const size_t size = 256;
 
-  const double gen_min = savchenko_m_matrix_mult_strassen_seq::GEN_MIN;
-  const double gen_max = savchenko_m_matrix_mult_strassen_seq::GEN_MAX;
+  const double gen_min = -10.0;
+  const double gen_max = 10.0;
 
   std::vector<double> matrix_A = savchenko_m_matrix_mult_strassen_seq::getRandomMatrix(size, gen_min, gen_max);
   std::vector<double> matrix_B = savchenko_m_matrix_mult_strassen_seq::getRandomMatrix(size, gen_min, gen_max);

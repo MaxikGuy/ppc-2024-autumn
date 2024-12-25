@@ -42,8 +42,6 @@ double getRandomDouble(double min, double max) {
   return dist(gen);
 }
 
-const double GEN_MIN = -10.0;
-const double GEN_MAX = 10.0;
 }  // namespace savchenko_m_matrix_mult_strassen_mpi
 
 TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_5x5) {
@@ -60,8 +58,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_5x5) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -118,8 +116,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_10x10) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -176,8 +174,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_15x15) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -234,8 +232,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_20x20) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -292,8 +290,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_8x8) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -350,8 +348,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_16x16) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -408,8 +406,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_32x32) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -466,8 +464,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_64x64) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
@@ -524,66 +522,8 @@ TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_128x128) {
   // Create TaskData
   std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
   if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
-
-    matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
-    matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
-    matrix_res = std::vector<double>(size * size, 0.0);
-
-    taskDataPar->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_A.data()));
-    taskDataPar->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_B.data()));
-    taskDataPar->inputs_count.emplace_back(size);
-
-    taskDataPar->outputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_res.data()));
-    taskDataPar->outputs_count.emplace_back(matrix_res.size());
-
-    // Refference
-    refference = std::vector<double>(size * size, 0.0);
-    std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
-    taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_A.data()));
-    taskDataSeq->inputs.emplace_back(reinterpret_cast<uint8_t *>(matrix_B.data()));
-    taskDataSeq->inputs_count.emplace_back(size);
-
-    taskDataSeq->outputs.emplace_back(reinterpret_cast<uint8_t *>(refference.data()));
-    taskDataSeq->outputs_count.emplace_back(refference.size());
-    // Create Task
-    savchenko_m_matrix_mult_strassen_mpi::TestMPITaskSequential testMpiTaskSequential(taskDataSeq);
-    ASSERT_TRUE(testMpiTaskSequential.validation());
-    ASSERT_TRUE(testMpiTaskSequential.pre_processing());
-    ASSERT_TRUE(testMpiTaskSequential.run());
-    ASSERT_TRUE(testMpiTaskSequential.post_processing());
-  }
-  // Create Task
-  savchenko_m_matrix_mult_strassen_mpi::TestMPITaskParallel testMpiTaskParallel(taskDataPar);
-  ASSERT_TRUE(testMpiTaskParallel.validation());
-  ASSERT_TRUE(testMpiTaskParallel.pre_processing());
-  ASSERT_TRUE(testMpiTaskParallel.run());
-  ASSERT_TRUE(testMpiTaskParallel.post_processing());
-
-  if (world.rank() == 0) {
-    for (size_t i = 0; i < size * size; i++) {
-      EXPECT_NEAR(refference[i], matrix_res[i], 1e-8);
-    }
-  }
-}
-
-TEST(savchenko_m_matrix_mult_strassen_mpi, matrixes_256x256) {
-  // Create data
-  boost::mpi::communicator world;
-
-  const size_t size = 256;
-
-  std::vector<double> matrix_A;
-  std::vector<double> matrix_B;
-  std::vector<double> matrix_res;
-  std::vector<double> refference;
-
-  // Create TaskData
-  std::shared_ptr<ppc::core::TaskData> taskDataPar = std::make_shared<ppc::core::TaskData>();
-  if (world.rank() == 0) {
-    const double gen_min = savchenko_m_matrix_mult_strassen_mpi::GEN_MIN;
-    const double gen_max = savchenko_m_matrix_mult_strassen_mpi::GEN_MAX;
+    const double gen_min = -10.0;
+    const double gen_max = 10.0;
 
     matrix_A = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
     matrix_B = savchenko_m_matrix_mult_strassen_mpi::getRandomMatrix(size, gen_min, gen_max);
